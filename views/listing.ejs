@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title><%= listing.title %></title>
+</head>
+<body>
+  <h1><%= listing.title %></h1>
+  <p>描述：<%= listing.description %></p>
+  <p>价格：<%= listing.price %></p>
+  <p>卖家邮箱：<%= listing.sellerEmail %></p>
+  <p>品牌：<%= listing.brand %></p>
+  <p>里程：<%= listing.miles %> 英里</p>
+  <p>颜色：<%= listing.color %></p>
+  
+  <h2>联系卖家</h2>
+  <form action="/contact/<%= listing.id %>" method="post">
+    <div>
+      <label>您的邮箱：</label>
+      <input type="email" name="buyerEmail" required>
+    </div>
+    <div>
+      <label>留言：</label>
+      <textarea name="message" required></textarea>
+    </div>
+    <button type="submit">发送</button>
+  </form>
+  
+  <a href="/">返回首页</a>
+</body>
+</html>
